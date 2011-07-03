@@ -1,23 +1,38 @@
 {% extends "base.html" %}
 {% block custom_header %}
 <script type="text/javascript" src="/media/js/jquery-1.6.1.min.js"></script>
-	<script type="text/javascript" src="/media/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-	<script type="text/javascript" src="/media/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-	<link rel="stylesheet" type="text/css" href="/media/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-    <script language="javascript" type ="text/javascript">
-        $(document).ready(function() {
+<script type="text/javascript" src="/media/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="/media/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="/media/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script language="javascript" type ="text/javascript">
+    $(document).ready(function() {
 
-            $("#various1").fancybox({
-				'titlePosition'		: 'outside',
-				'transitionIn'		: 'elastic',
-				'transitionOut'		: 'elastic',
-			});
-        });
-	</script>
+        $("#top10").fancybox({
+			'titlePosition'		: 'outside',
+			'transitionIn'		: 'elastic',
+			'transitionOut'		: 'elastic',
+		});
+    });
+</script>
+
+<!--TODO: Colocar header -->
+<div class="top-tweet" style="text-align:right;padding-left:480px; cursor:pointer">
+    <span>
+        <a id="top10" href="#block-top">
+        <img alt="Top Tweets" title="Top Tweets" src="/media/img/top.png"/></a>
+    </span>
+</div>
 {% endblock custom_header %}
 
 {% block top_tweets %}
-<div id="inline1" title="Top Promotions" class="topPromotions"">
+<div id="block-top" title="Top Promotions" class="topPromotions"">
     <p class="linksTweet" style="text-align:center; font-size:18px">Top Promotions</p>
+    <ol>
+    {% for entry in top_tweets %}
+	    <li>
+	    {{ entry.get_tweet }}
+	    </li>
+    {% endfor %}
+    </ol>
 </div>
 {% endblock top_tweets %}

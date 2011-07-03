@@ -4,7 +4,6 @@
 <head>
 <title>Página Inicial - Promottion</title>
 
-<link rel="stylesheet" href="/media/stylesheets/screen.css" media="screen, projection" />
 <!--[if lt IE 8]>
 <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
 <![endif]-->
@@ -14,34 +13,19 @@
 {% block custom_header %}{% endblock custom_header %}
 
 </head>
-<body{% block body_params %}{% endblock body_params %}>
+<body>
+	
 	<div class="container">
-		{% block content %}
-		{% endblock content %}
+		{% include "tweet_container.html" with category=1 header="Cadastro" %}
 	</div>
 	
-	<table border="1">
-		<thead>
-			<tr>
-				<th>Cadastro</th>
-				<th>Retweets</th>
-				<th>Desconto</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>
-					{% include "tweet_container.html" with class="cadastro" %}
-				</td>
-				<td>
-					{% include "tweet_container.html" with class="retuite" %}
-				</td>
-				<td>
-					{% include "tweet_container.html" with class="desconto" %}
-				</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="container">
+		{% include "tweet_container.html" with category=2 header="Retuite" %}
+	</div>
+				
+	<div class="container">
+		{% include "tweet_container.html" with category=3 header="Desconto"%}
+	</div>
 	
 	<div style="display: none;">
 		{% block top_tweets %}

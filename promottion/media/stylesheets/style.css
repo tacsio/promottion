@@ -1,0 +1,16 @@
+/*
+	//TODO: Organizar Css
+*/
+
+.container {
+	float:left;
+	display:block;
+	width: 300px;
+	padding: 10px, 5px, 10px, 5px;
+}
+
+.top-tweet {
+	text-align: right;
+	cursor:pointer;
+
+}

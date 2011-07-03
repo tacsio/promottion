@@ -1,8 +1,8 @@
-<div class="{{class}}">
 {% for entry in tweets %}
+	{% if entry.get_category == category %}
 	<img src="{{entry.get_avatar}}"/>
 	<a href="{{entry.get_uri}}">{{entry.get_author}}</a>
 	<p>{{entry.get_tweet}}</p>
-	<hr />
+	{% endif %}
 {% endfor %}
-</div>
+
