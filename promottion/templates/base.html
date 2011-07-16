@@ -14,22 +14,28 @@
 
 </head>
 <body>
-	
-	<div class="container">
-		{% include "tweet_container.html" with category=1 header="Cadastro" %}
-	</div>
-	
-	<div class="container">
-		{% include "tweet_container.html" with category=2 header="Retuite" %}
-	</div>
-				
-	<div class="container">
-		{% include "tweet_container.html" with category=3 header="Desconto"%}
-	</div>
-	
-	<div style="display: none;">
+	<div class="header">
+		{% block header %}
+		{% endblock header %}
+		
 		{% block top_tweets %}
 		{% endblock top_tweets %}
-    </div>
+	</div>
+	<div class="search-box">
+	<!-- TODO: Fazer base do search -->
+	</div>
+	<div class="container">
+		<div class="category-box">
+			{% include "tweet_container.html" with category=1 header="Cadastro" %}
+		</div>
+	
+		<div class="category-box">
+			{% include "tweet_container.html" with category=2 header="Retuite" %}
+		</div>
+				
+		<div class="category-box">
+			{% include "tweet_container.html" with category=3 header="Desconto"%}
+		</div>
+	</div>
 </body>
 </html>

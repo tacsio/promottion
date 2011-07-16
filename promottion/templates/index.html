@@ -14,25 +14,29 @@
 		});
     });
 </script>
+{% endblock custom_header %}
 
-<!--TODO: Colocar header -->
-<div class="top-tweet" style="text-align:right;padding-left:480px; cursor:pointer">
+{% block top_tweets %}
+
+<div class="block-top-tweets">
     <span>
         <a id="top10" href="#block-top">
         <img alt="Top Tweets" title="Top Tweets" src="/media/img/top.png"/></a>
     </span>
 </div>
-{% endblock custom_header %}
 
-{% block top_tweets %}
-<div id="block-top" title="Top Promotions" class="topPromotions"">
-    <p class="linksTweet" style="text-align:center; font-size:18px">Top Promotions</p>
-    <ol>
-    {% for entry in top_tweets %}
-	    <li>
-	    {{ entry.get_tweet }}
-	    </li>
-    {% endfor %}
-    </ol>
+<div style="display: none">
+	<div id="block-top" title="Top Promotions" class="fancy-tops">
+		<p sytle="font-size:18px; text-align:center">Top Promotions</p>
+		<div id="top-promotions" class="top-promotions">
+			<ol>
+			{% for entry in top_tweets %}
+				<li>
+				{{ entry.get_tweet }}
+				</li>
+			{% endfor %}
+			</ol>
+		</div>
+	</div>
 </div>
 {% endblock top_tweets %}

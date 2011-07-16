@@ -1,8 +1,18 @@
 {% for entry in tweets %}
 	{% if entry.get_category == category %}
-	<img src="{{entry.get_avatar}}"/>
-	<a href="{{entry.get_uri}}">{{entry.get_author}}</a>
-	<p>{{entry.get_tweet}}</p>
+	<div class="tweet-box">
+		<div class="avatar">
+			<img src="{{entry.get_avatar}}"/>
+		</div>
+		<div class="tweet">
+			<div>
+				<a class="links-tweet" href="{{entry.get_uri}}">{{entry.get_author}}</a>
+			</div>
+			<div>
+				<p class="tweet-text">{{entry.get_tweet}}</p>
+			</div>
+		</div>
+	</div>
 	{% endif %}
 {% endfor %}
 
