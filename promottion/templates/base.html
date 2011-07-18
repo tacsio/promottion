@@ -17,25 +17,34 @@
 	<div class="header">
 		{% block header %}
 		{% endblock header %}
-		
-		{% block top_tweets %}
-		{% endblock top_tweets %}
-	</div>
-	<div class="search-box">
-	<!-- TODO: Fazer base do search -->
 	</div>
 	<div class="container">
-		<div class="category-box">
-			{% include "tweet_container.html" with category=1 header="Cadastro" %}
+		<div class="search-box">
+			{% block top_tweets %}
+			{% endblock top_tweets %}
+		<!-- TODO: Fazer base do search -->
 		</div>
-	
-		<div class="category-box">
-			{% include "tweet_container.html" with category=2 header="Retuite" %}
+		<div class="category">
+			<img alt="Cadastro" title="Cadastro" src="/media/img/cadastro.png" />
+			<div class="category-box">
+				{% include "tweet_container.html" with category=1 header="Cadastro" %}
+			</div>
 		</div>
-				
-		<div class="category-box">
-			{% include "tweet_container.html" with category=3 header="Desconto"%}
+		<div class="category">
+			<img alt="Retweets" title="Retweets" src="/media/img/retweet.png" />
+			<div class="category-box">
+				{% include "tweet_container.html" with category=2 header="Retuite" %}
+			</div>
+		</div>		
+		<div class="category">	
+			<img alt="Descontos" title="Descontos" src="/media/img/desconto.png" />
+			<div class="category-box">
+				{% include "tweet_container.html" with category=3 header="Desconto"%}
+			</div>
 		</div>
+	</div>
+	<div class="footer">
+	<!-- TODO: Fazer rodape -->	
 	</div>
 </body>
 </html>

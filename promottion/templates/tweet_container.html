@@ -2,14 +2,14 @@
 	{% if entry.get_category == category %}
 	<div class="tweet-box">
 		<div class="avatar">
-			<img src="{{entry.get_avatar}}"/>
+			<img src="{{entry.get_avatar}}"  width="48px" height="48px"/>
 		</div>
 		<div class="tweet">
 			<div>
 				<a class="links-tweet" href="{{entry.get_uri}}">{{entry.get_author}}</a>
 			</div>
-			<div>
-				<p class="tweet-text">{{entry.get_tweet}}</p>
+			<div class="tweet-text">
+				<p>{{entry.get_tweet}}</p>
 			</div>
 		</div>
 	</div>

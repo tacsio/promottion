@@ -5,40 +5,60 @@
 body {
 	background-color:rgb(222,239,246);
 }
+
+p {
+	margin-top: 2px;
+	margin-bottom: 0px;
+}
+
 li {
 	padding-bottom: 5px;
 }
+
 .container {
+	margin: 0 auto;
+    width: 1045px;
 }
 
-.category-box {
-	width: 300px;
-	margin-right: 20px;
-	background-color: white;
+.category {
+	width: 315px;
 	max-height:500px;
-	overflow:hidden;
-	overflow-x:hidden;
+	margin-right: 30px;
 	float:left;
 	display:block;
 }
 
+.category-box {
+	width: 315px;
+	background-color: white;
+	max-height:500px;
+	overflow:hidden;
+	overflow-x:hidden;
+}
+
 .category-box:hover {
-	width: 301px;
+	padding-right: 0px;
 	overflow:scroll;
 	overflow-x:hidden;
 }
 
 .tweet-box {
-	width:100%;
+	cursor: default;
+	width:305px;
     font-family:Arial,"Helvetica Neue",sans-serif;
+    border-bottom: 1px solid #ECECEC;
     font-size:13px;
     text-align:left;
     padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .tweet-box:hover
 {
-   background-color:#DEEFF6;
+	border: 1px solid white;
+	border-bottom: 1px solid #ECECEC;
+	background-color:#DEEFF6;
 }
 
 .avatar {
@@ -51,8 +71,7 @@ li {
 }
 
 .tweet-text {
-	margin-top: 2px;
-	margin-bottom: 0px;
+	width: 95%;
 }
 
 .links-tweet
@@ -85,6 +104,7 @@ li {
 }
 
 .top-promotions {
-	text-align:left;
-	font-size:16px;
+	font-family: "Helvetica Neue",sans-serif;
+    text-align: left;
+    font-size: 15px;
 }
