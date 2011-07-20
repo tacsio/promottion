@@ -6,5 +6,5 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('twitter.views',
 
 	(r'^$', 'index'),
-	(r'search/$', 'search'),
+	(r'^search$', 'search'),
 )

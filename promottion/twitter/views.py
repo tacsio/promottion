@@ -14,7 +14,10 @@ def index(request):
 	return render_to_response('index.html', {'tweets' : dados, 'top_tweets' : top_tweets} )
 	
 def search(request):
-	return render_to_response('search.html')
+	query = str(request.GET['query-key'])
+	dados = __minera_tweets_query(query)
+	top_tweets = __get_top_tweets(dados)
+	return render_to_response('index.html', {'tweets' : dados, 'top_tweets' : top_tweets})
 
 def __minera_tweets():
 	global list_tweets
@@ -26,7 +29,19 @@ def __minera_tweets():
 		__get_tweets(url.format(i))
 		
 	return list_tweets
-
+	
+def __minera_tweets_query(query):
+	key = '%20' + str(query).strip()
+	global list_tweets
+	list_tweets = []
+	subject = ['promocao' + key , 'desconto' + key, 'gratis' + key, 'cadastro' + key, 'oferta' + key, 'retuite' + key]
+	url='http://search.twitter.com/search.json?q={0}&rpp=100'  
+	
+	for i in subject:
+		__get_tweets(url.format(i))
+		
+	return list_tweets
+	
 def __get_tweets(url):
 	global list_tweets
 	dados=json.load(urllib2.urlopen(url))
@@ -46,6 +61,6 @@ def __get_tweets(url):
 			if(category in [Classifier.CADASTRO, Classifier.RETUITE, Classifier.DESCONTO]):
 				list_tweets.append(TweetEntry(author, tweet, avatar, uri, category))
 				
-
+#TODO: Utilizar a ideia de sessao para guardar os dados
 def __get_top_tweets(list_tweets):
 	return sorted(list_tweets, key=lambda entry : entry.get_num_rt(), reverse=True)[:10]

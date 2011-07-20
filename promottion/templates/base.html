@@ -9,21 +9,24 @@
 <![endif]-->
 <link rel="stylesheet" href="/media/stylesheets/style.css" media="screen, projection" />
 <link rel="stylesheet" href="/media/stylesheets/print.css" media="print" />
+<link rel="shortcut icon" href="/media/img/favicon.ico"/>
 <script src="/media/js/jquery-1.6.1.min.js" type="text/javascript"></script>
 {% block custom_header %}{% endblock custom_header %}
 
 </head>
 <body>
+	<div class="menu">
+	<!-- TODO: menu? -->
+	</div>
 	<div class="header">
-		{% block header %}
-		{% endblock header %}
+		<a id="logo-home" href="/">
+			<img alt="Promottion" title="Promottion" src="/media/img/logo.png"/>
+		</a>
 	</div>
 	<div class="container">
-		<div class="search-box">
-			{% block top_tweets %}
-			{% endblock top_tweets %}
-		<!-- TODO: Fazer base do search -->
-		</div>
+		{% include "search.html" %}
+		{% block top_tweets %}
+		{% endblock top_tweets %}
 		<div class="category">
 			<img alt="Cadastro" title="Cadastro" src="/media/img/cadastro.png" />
 			<div class="category-box">
@@ -43,8 +46,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="footer">
-	<!-- TODO: Fazer rodape -->	
-	</div>
+	{% include "footer.html" %}
 </body>
 </html>
