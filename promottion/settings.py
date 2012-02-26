@@ -2,7 +2,7 @@
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-PATH_PROMOTION = '/home/tacsio/Projects/promotion/promottion'
+PATH_PROMOTION = '/home/tacsio/promottion'
 
 ADMINS = (
     ('Tarcisio Coutinho', 'tacsio@hotmail.com'),
@@ -46,7 +46,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = PATH_PROMOTION + '/media/'
+MEDIA_ROOT = PATH_PROMOTION + '/public/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
