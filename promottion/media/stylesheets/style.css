@@ -33,6 +33,7 @@ input {
 	color: #2E4174;
 	border:solid 0 #fff;
 	background: transparent;
+        outline: none;
 }
 
 .field-search-img {
@@ -43,6 +44,10 @@ input {
 	background: transparent	url("/media/img/search-field.png") 0px 33px no-repeat;
 }
 
+.chrome .field-search-img {
+	background: transparent	url("/media/img/search-field.png") 0px 35px no-repeat;
+}
+
 .button-search {
 	cursor: pointer;
 	padding: 0px 0px 0px 0px;
@@ -51,6 +56,7 @@ input {
 	border:solid 0 #fff;
 	background: transparent	url("/media/img/search-button.png") 0px 0px no-repeat;
 }
+
 .search-box {
 	padding: 20px 0px 0px 320px;
 	float:left;
@@ -128,7 +134,7 @@ a.block-top-tweets {
 }
 
 .links-tweet {
-    color:Black; 
+    color:Black;
     text-decoration: none;
     font-family:Arial,"Helvetica Neue",sans-serif;
     text-align: left;

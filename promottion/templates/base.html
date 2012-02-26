@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/media/stylesheets/style.css" media="screen, projection" />
 <link rel="stylesheet" href="/media/stylesheets/print.css" media="print" />
 <link rel="shortcut icon" href="/media/img/favicon.ico"/>
+<script src="/media/js/css_browser_selector.js" type="text/javascript"></script>
 <script src="/media/js/jquery-1.6.1.min.js" type="text/javascript"></script>
 {% block custom_header %}{% endblock custom_header %}
 
@@ -38,8 +39,8 @@
 			<div class="category-box">
 				{% include "tweet_container.html" with category=2 header="Retuite" %}
 			</div>
-		</div>		
-		<div class="category">	
+		</div>
+		<div class="category">
 			<img alt="Descontos" title="Descontos" src="/media/img/desconto.png" />
 			<div class="category-box">
 				{% include "tweet_container.html" with category=3 header="Desconto"%}

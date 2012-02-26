@@ -1,6 +1,6 @@
 run:
 	@clear
-	@python manage.py runserver 8000
+	@python manage.py runserver 3000
 
 createdb:
 	@clear
