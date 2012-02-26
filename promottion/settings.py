@@ -2,7 +2,7 @@
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-PATH_PROMOTION = '/home/tacsio/promottion'
+PATH_PROMOTION = '/home/tacsio/promotion/promottion'
 
 ADMINS = (
     ('Tarcisio Coutinho', 'tacsio@hotmail.com'),
